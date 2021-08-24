@@ -7,6 +7,21 @@
 
 .node {
     display: flex;
+    position: relative;
+}
+
+.node::after {
+    content: "";
+    background-image: url(./assests/images/line.png);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 6px;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .node .c1 {
@@ -14,6 +29,43 @@
     flex-direction: column;
     align-items: center;
     margin: 0 12px;
+    border: 1px solid #000;
+    background-color: white;
+    border-radius: 12px;
+    padding: 12px;
+    width: 100px;
+    cursor: pointer;
+    position: relative;
+}
+
+.node .c1:hover .details {
+    display: block;
+}
+
+.node .c1 .details {
+    display: none;
+    position: absolute;
+    left: 135px;
+    z-index: 999;
+    background-color: #0e0d0e;
+    color: white;
+    padding: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+.node .c1 .details::before {
+    content: "";
+    border-left: 10px solid transparent;
+    left: -20px;
+    top: 50%;
+    position: absolute;
+    height: 0;
+    border-right: 10px solid #000;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: translateY(-50%);
 }
 
 .node .c1 .name {
@@ -35,4 +87,8 @@
 
 .children {
     display: flex;
+}
+
+.level {
+    margin: 10px 0;
 }
