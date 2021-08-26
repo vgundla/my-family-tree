@@ -8,6 +8,7 @@
 .node {
     display: flex;
     position: relative;
+    margin: 20px 0;
 }
 
 .node::after {
@@ -24,6 +25,21 @@
     background-size: 100%;
 }
 
+.node.hasChildren .c1::after {
+    content: "";
+    background-image: url(./assests/images/line.png);
+    position: absolute;
+    top: 90%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 6px;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transform: rotateZ(90deg);
+} 
+
 .node .c1 {
     display: flex;
     flex-direction: column;
@@ -36,11 +52,42 @@
     width: 100px;
     cursor: pointer;
     position: relative;
+    height: fit-content;
+}
+
+.node .c1.child::before{
+    content: "";
+    background-image: url(./assests/images/line.png);
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 6px;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    transform: rotateZ(90deg);  
+
 }
 
 .node .c1:hover .details {
     display: block;
+    
 }
+
+.node .c1:hover {
+       background-color:gold;
+       box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+       0 0  0 2px rgb(255,255,255),
+       0.3em 0.3em 1em rgba(0,0,0,0.3);
+
+}
+
+.node .c1:hover .name{
+    font-weight: 900;
+}
+
 
 .node .c1 .details {
     display: none;
@@ -70,6 +117,7 @@
 
 .node .c1 .name {
     text-align: center;
+    height: 57px;
 }
 
 .node .image-wrapper {
@@ -87,8 +135,19 @@
 
 .children {
     display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+.children::before {
+    content: "";
+    top: 2px;
+    width: 90%;
+    position: absolute;
+    border: 1px solid #000;
 }
 
 .level {
-    margin: 10px 0;
+
+    padding: 0px;
 }
