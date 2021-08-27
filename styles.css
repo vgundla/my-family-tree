@@ -2,7 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Acme', sans-serif;
+    background-image: url(./assests/images/mmmm.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .node {
